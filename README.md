@@ -6,8 +6,11 @@ Original paper:
 ## Setup
 
 ### Dependencies
+- PyTorch
+- NumPy
+- matplotlib (optional)
 
-### Installation with pip
+### Installation
 ```console
 python setup.py install
 ```
