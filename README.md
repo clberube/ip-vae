@@ -39,4 +39,4 @@ plt.xlabel("$t$ (s)")
 plt.savefig("./figures/example.png")
 ```
 
-![example](./figures/examples.png)
+![example](./figures/example.png)
