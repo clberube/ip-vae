@@ -1,7 +1,7 @@
 # IP-VAE
 PyTorch implementation of the time-domain induced polarization variational autoencoder.
 
-Original paper: 
+Original paper:
 
 ## Setup
 
@@ -26,10 +26,12 @@ from ipvae import IPVAE
 model = IPVAE()
 model.load_weights()
 
-# Generate an arbitrary noisy decay
-x = torch.exp(torch.linspace(10, 1, 20)/5) + 5*(torch.rand(20)-0.5)
+# Generate a synthetic decay
+x = model.module.decode(torch.rand(2))
+# Add synthetic noise to it
+x += 5*(torch.rand(20) - 0.5)
 
-# IP-VAE forward pass
+# Denoise decay with a forward pass
 xp = model.forward(x)
 
 # Plot comparison
