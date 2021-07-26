@@ -27,7 +27,7 @@ xp = model.forward(xn)
 
 # Plot comparison
 t = np.arange(0.12+0.02, 0.92, 0.04)  # the IRIS ELREC Pro windows
-plt.plot(t, x.detach().numpy(), '--k', label="Synthetic decay")
+plt.plot(t, x.detach().numpy(), '--k', label="Ground truth")
 plt.plot(t, xn.detach().numpy(), '.k', label="Noisy input")
 plt.plot(t, xp[0].detach().numpy(), '-C3', label="Denoised")
 plt.legend()
