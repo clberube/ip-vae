@@ -33,7 +33,7 @@ plt.plot(t, xp[0].detach().numpy(), '-C3', label="Denoised")
 plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
-plt.savefig("./figures/example.png", dpi=144, bbox_inches="tight")
+# plt.savefig("./figures/example.png", dpi=144, bbox_inches="tight")
 
 
 xp = torch.stack([model.forward(x)[0] for _ in range(100)])
