@@ -1,14 +1,14 @@
 # IP-VAE
 PyTorch implementation of the time-domain induced polarization variational autoencoder.
 
-Original paper:
+Original paper: 
 
 ## Setup
 
 ### Dependencies
-- PyTorch
-- NumPy
-- matplotlib (optional)
+- [PyTorch](https://pytorch.org/)
+- [NumPy](https://numpy.org/)
+- [matplotlib](https://matplotlib.org/) (optional)
 
 ### Installation
 ```console
