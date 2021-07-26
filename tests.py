@@ -1,27 +1,21 @@
-# IP-VAE
-PyTorch implementation of the time-domain induced polarization variational autoencoder.
+# @Author: cberube
+# @Date:   2021-07-26 17:07:38
+# @Email:  charles.berube@polymtl.ca
+# @Last modified by:   cberube
+# @Last modified time: 2021-07-26 17:07:31
 
-Original paper:
 
-## Setup
-
-### Dependencies
-
-### Installation with pip
-```console
-python setup.py install
-```
-
-## Usage
-
-```python
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
+
 from ipvae import IPVAE
 
+
 model = IPVAE()
-model.load_weights()
+
+
+model = model.load_weights()
 
 # Generate an arbitrary noisy decay
 x = torch.exp(torch.linspace(10, 1, 20)/5) + 5*(torch.rand(20)-0.5)
@@ -37,6 +31,3 @@ plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
 plt.savefig("./figures/example.png")
-```
-
-[!img](figures/examples.png)
