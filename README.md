@@ -17,6 +17,7 @@ python setup.py install
 
 ## Usage
 
+### Loading the model
 ```python
 import torch
 import numpy as np
@@ -25,12 +26,18 @@ from ipvae import IPVAE
 
 model = IPVAE()
 model.load_weights()
+```
 
+### Generative properties
+```python
 # Generate a synthetic decay
 x = model.module.decode(torch.rand(2))
 # Add synthetic noise to it
-x += 5*(torch.rand(20) - 0.5)
+xn = x + 5*(torch.rand(20) - 0.5)
+```
 
+### Basic denoising
+```python
 # Denoise decay with a forward pass
 xp = model.forward(x)
 
@@ -47,3 +54,13 @@ plt.xlabel("$t$ (s)")
 <p align="center">
   <img width="460" height="300" src="./figures/example.png">
 </p>
+
+### Uncertainty estimation
+```python
+# Run 100 realizations and stack as a tensor
+xp = [model.forward(x)[0] for _ in range(100)]
+xp = torch.stack(xp)
+# Compute statistics
+xp_avg = torch.mean(xp, dim=0)
+xp_std = torch.std(xp, dim=0)
+```

@@ -34,3 +34,9 @@ plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
 plt.savefig("./figures/example.png", dpi=144, bbox_inches="tight")
+
+
+xp = torch.stack([model.forward(x)[0] for _ in range(100)])
+# Compute statistics
+xp_avg = torch.mean(xp, dim=0)
+xp_std = torch.std(xp, dim=0)
