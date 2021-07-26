@@ -39,7 +39,7 @@ xn = x + 5*(torch.rand(20) - 0.5)
 ### Basic denoising
 ```python
 # Denoise decay with a forward pass
-xp = model.forward(x)
+xp = model.forward(xn)
 
 # Plot comparison
 t = np.arange(0.12+0.02, 0.92, 0.04)  # the IRIS ELREC Pro windows
@@ -58,7 +58,7 @@ plt.xlabel("$t$ (s)")
 ### Uncertainty estimation
 ```python
 # Run 100 realizations and stack as a tensor
-xp = [model.forward(x)[0] for _ in range(100)]
+xp = [model.forward(xn)[0] for _ in range(100)]
 xp = torch.stack(xp)
 # Compute statistics
 xp_avg = torch.mean(xp, dim=0)
