@@ -18,7 +18,7 @@ model = IPVAE()
 model = model.load_weights()
 
 # Generate an arbitrary noisy decay
-x = torch.exp(torch.linspace(10, 1, 20)/5) + 5*(torch.rand(20)-0.5)
+x = torch.exp(torch.linspace(10, 1, 20)/5) + 2*(torch.rand(20)-0.5)
 
 # Forward pass of the IP-VAE
 xp = model.forward(x)
