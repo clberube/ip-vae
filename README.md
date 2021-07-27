@@ -98,4 +98,4 @@ The IP-VAE is quite fast. These are timing results from running it on a Apple M1
 ```console
 135 µs ± 619 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 ```
-Meaning around 7500 decays can be processed every second on a personal laptop computer.
+Meaning it can process around 7500 decays per second on a personal laptop computer.
