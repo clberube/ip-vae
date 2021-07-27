@@ -38,6 +38,7 @@ xn = x + 5*(torch.rand(20) - 0.5)
 ```
 
 ### Basic denoising
+In this example we show how to denoise a decay curve. IP-VAE forward passes are stochastic. Doing a single pass will provide varying results.
 ```python
 # Denoise decay with a forward pass
 output = model.forward(xn)  # returns (xp, mu, logvar)
@@ -58,7 +59,7 @@ plt.xlabel("$t$ (s)")
 </p>
 
 ### Uncertainty estimation
-IP-VAE forward passes are stochastic. It is a good idea to run multiple realizations to estimate data uncertainty. Here we use `2*sigma` as the uncertainty but users are free to compute any quantiles.
+It is a better idea to run multiple realizations to estimate data uncertainty. Here we use `2*sigma` as the uncertainty but users are free to compute any quantiles.
 
 ```python
 # Run 100 realizations and stack as a tensor
@@ -75,7 +76,7 @@ plt.plot(t, xp_avg.detach().numpy(), '-C3', label="Denoised")
 plt.fill_between(t,
                  (xp_avg-2*xp_std).detach().numpy(),
                  (xp_avg+2*xp_std).detach().numpy(),
-                 color='C3', alpha=0.2, label="Uncertainty")
+                 color='C3', alpha=0.2, label=r"$2\sigma$")
 plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
