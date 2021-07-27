@@ -91,7 +91,7 @@ plt.show()
 </p>
 
 ### Computation speed
-The IP-VAE is quite fast. These are timing results from running it on a Apple M1 chip.
+The IP-VAE is quite fast. These are timing results from running a forward pass on a Apple M1 chip.
 ```python
 %timeit model.forward(xn)
 ```
