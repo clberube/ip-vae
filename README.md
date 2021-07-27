@@ -22,9 +22,9 @@ python setup.py install
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
-from ipvae import IPVAE
+import ipvae
 
-model = IPVAE()
+model = ipvae.Net()
 model.load_weights()
 ```
 
@@ -52,6 +52,7 @@ plt.plot(t, xp.detach().numpy(), '-C3', label="Denoised")
 plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
+plt.show()
 ```
 
 <p align="center">
@@ -80,6 +81,7 @@ plt.fill_between(t,
 plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
+plt.show()
 ```
 
 <p align="center">

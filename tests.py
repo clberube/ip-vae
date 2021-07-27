@@ -9,10 +9,9 @@ import torch
 import numpy as np
 import matplotlib.pyplot as plt
 
-from ipvae import IPVAE
+import ipvae
 
-
-model = IPVAE()
+model = ipvae.Net()
 model = model.load_weights()
 
 # Generate a synthetic decay
@@ -59,4 +58,4 @@ plt.fill_between(t,
 plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
-plt.savefig("./figures/example-2.png", dpi=144, bbox_inches="tight")
+# plt.savefig("./figures/example-2.png", dpi=144, bbox_inches="tight")

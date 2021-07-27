@@ -11,11 +11,11 @@ import torch
 import torch.nn as nn
 
 
-class IPVAE(nn.Module):
+class Net(nn.Module):
     """IP-VAE architecture"""
     def __init__(self):
         """Initializes layers"""
-        super(IPVAE, self).__init__()
+        super(Net, self).__init__()
         # Encoder
         self.fc1 = nn.Linear(20, 16)
         self.fc2 = nn.Linear(16, 8)

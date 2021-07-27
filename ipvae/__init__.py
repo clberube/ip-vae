@@ -5,4 +5,4 @@
 # @Last modified time: 2021-07-26 17:07:65
 
 
-from .model import IPVAE
+from .model import Net
