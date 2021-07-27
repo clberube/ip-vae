@@ -57,7 +57,7 @@ plt.xlabel("$t$ (s)")
 </p>
 
 ### Uncertainty estimation
-IP-VAE forward passes are stochastic. It is a good idea to run multiple realizations to estimate data uncertainty. Here we use $2\sigma$ as the uncertainty but users are free to compute any quantiles.
+IP-VAE forward passes are stochastic. It is a good idea to run multiple realizations to estimate data uncertainty. Here we use `2*sigma` as the uncertainty but users are free to compute any quantiles.
 
 ```python
 # Run 100 realizations and stack as a tensor
