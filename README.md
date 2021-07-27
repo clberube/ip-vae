@@ -32,8 +32,8 @@ model.load_weights()
 ```python
 # Generate a synthetic decay
 # by decoding a sample of 2D N(0,1)
-x = model.decode(torch.rand(2))
-# Add synthetic noise to it
+x = model.decode(torch.randn(2))
+# Add uniform random noise to it
 xn = x + 5*(torch.rand(20) - 0.5)
 ```
 
