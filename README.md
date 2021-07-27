@@ -19,10 +19,10 @@ python setup.py install
 
 ### Loading the model
 ```python
+import ipvae
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
-import ipvae
 
 model = ipvae.Net()
 model.load_weights()
