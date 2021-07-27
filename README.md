@@ -31,7 +31,8 @@ model.load_weights()
 ### Generative properties
 ```python
 # Generate a synthetic decay
-x = model.module.decode(torch.rand(2))
+# by decoding a sample of 2D N(0,1)
+x = model.decode(torch.rand(2))
 # Add synthetic noise to it
 xn = x + 5*(torch.rand(20) - 0.5)
 ```
@@ -53,7 +54,7 @@ plt.xlabel("$t$ (s)")
 ```
 
 <p align="center">
-  <img width="460" height="300" src="./figures/example.png">
+  <img width="460" height="300" src="./figures/example-1.png">
 </p>
 
 ### Uncertainty estimation

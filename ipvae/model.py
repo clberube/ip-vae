@@ -81,4 +81,4 @@ class IPVAE(nn.Module):
         wt_path = pkg_resources.resource_filename('ipvae', '/weights.pt')
         model = nn.DataParallel(self)
         model.load_state_dict(torch.load(wt_path))
-        return model
+        return model.module
