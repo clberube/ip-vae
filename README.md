@@ -33,6 +33,7 @@ model.load_weights()
 # Generate a synthetic decay
 # by decoding a sample of 2D N(0,1)
 x = model.decode(torch.randn(2))
+
 # Add uniform random noise to it
 xn = x + 5*(torch.rand(20) - 0.5)
 ```
@@ -70,6 +71,7 @@ xp = torch.stack(xp)
 xp_avg = torch.mean(xp, dim=0)
 xp_std = torch.std(xp, dim=0)
 
+# Plot comparison
 plt.figure()
 plt.plot(t, x.detach().numpy(), '--k', label="Ground truth")
 plt.plot(t, xn.detach().numpy(), '.k', label="Noisy input")
