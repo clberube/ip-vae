@@ -89,3 +89,13 @@ plt.show()
 <p align="center">
   <img width="460" height="300" src="./figures/example-2.png">
 </p>
+
+### Computation speed
+The IP-VAE is quite fast. These are timing results from running it on a Apple M1 chip.
+```python
+%timeit model.forward(xn)
+```
+```console
+135 µs ± 619 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+```
+Meaning around 7500 decays can be processed every second on a personal laptop computer.

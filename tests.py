@@ -59,3 +59,5 @@ plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
 # plt.savefig("./figures/example-2.png", dpi=144, bbox_inches="tight")
+
+%timeit model.forward(xn)
