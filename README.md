@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/389770922.svg)](https://zenodo.org/badge/latestdoi/389770922)
+
+
 # IP-VAE
 PyTorch implementation of the time-domain induced polarization variational autoencoder.
 
