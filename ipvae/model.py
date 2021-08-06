@@ -13,16 +13,21 @@ import torch.nn as nn
 
 class Net(nn.Module):
     """IP-VAE architecture"""
-    def __init__(self):
-        """Initializes layers"""
+    def __init__(self, zdim=2):
+        """Initializes layers.
+
+        Args:
+            zdim (int): the latent vector dimensions
+        """
         super(Net, self).__init__()
+        self.zdim = zdim
         # Encoder
         self.fc1 = nn.Linear(20, 16)
         self.fc2 = nn.Linear(16, 8)
-        self.fc31 = nn.Linear(8, 2)
-        self.fc32 = nn.Linear(8, 2)
+        self.fc31 = nn.Linear(8, self.zdim)
+        self.fc32 = nn.Linear(8, self.zdim)
         # Decoder
-        self.fc4 = nn.Linear(2, 8)
+        self.fc4 = nn.Linear(self.zdim, 8)
         self.fc5 = nn.Linear(8, 16)
         self.fc6 = nn.Linear(16, 20)
 
@@ -30,7 +35,7 @@ class Net(nn.Module):
         """Decodes a latent vector sample.
 
         Args:
-            x (tensor): input
+            x (tensor): input sequence
 
         Returns:
             mu, logvar (tensors), the mean and variance of q(z|x)
@@ -78,7 +83,8 @@ class Net(nn.Module):
         return self.decode(z), mu, logvar
 
     def load_weights(self):
-        wt_path = pkg_resources.resource_filename('ipvae', '/weights.pt')
+        rel_path = f'/weights_zdim={self.zdim}.pt'
+        wt_path = pkg_resources.resource_filename('ipvae', rel_path)
         model = nn.DataParallel(self)
         model.load_state_dict(torch.load(wt_path))
         return model.module

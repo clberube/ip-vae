@@ -28,7 +28,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 model = ipvae.Net()
-model.load_weights()
+model = model.load_weights()
 ```
 
 ### Generative properties
@@ -102,3 +102,11 @@ The IP-VAE is quite fast. These are timing results from running a forward pass o
 135 µs ± 619 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 ```
 Meaning it can process around 7500 decays per second on a personal laptop computer.
+
+### Tune latent dimensions
+It is possible to use the default model (`zdim=2`) or the other models described in the paper (`zdim=1`, `zdim=4`, `zdim=6`). The difference in results is not that noticeable, but `zdim=1` tends to generate smoother curves than `zdim=6`.
+
+```python
+model = ipvae.Net(zdim=1)
+model = model.load_weights()
+```

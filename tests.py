@@ -11,11 +11,13 @@ import matplotlib.pyplot as plt
 
 import ipvae
 
-model = ipvae.Net()
-model = model.load_weights()
+
+zdim = 1
+model = ipvae.Net(zdim=zdim)
+model.load_weights()
 
 # Generate a synthetic decay
-x = model.decode(torch.randn(2))
+x = model.decode(torch.randn(zdim))
 # Add synthetic noise to it
 xn = x + 5*(torch.rand(20) - 0.5)
 
@@ -31,7 +33,7 @@ plt.plot(t, xp[0].detach().numpy(), '-C3', label="Denoised")
 plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
-# plt.savefig("./figures/example-1.png", dpi=144, bbox_inches="tight")
+plt.savefig("./figures/example-1.png", dpi=144, bbox_inches="tight")
 
 
 xp = [model.forward(xn)[0] for _ in range(100)]
@@ -58,6 +60,6 @@ plt.fill_between(t,
 plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
-# plt.savefig("./figures/example-2.png", dpi=144, bbox_inches="tight")
+plt.savefig("./figures/example-2.png", dpi=144, bbox_inches="tight")
 
-%timeit model.forward(xn)
+# %timeit model.forward(xn)
