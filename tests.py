@@ -33,8 +33,8 @@ plt.plot(t, xp[0].detach().numpy(), '-C3', label="Denoised")
 plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
-plt.ylim([6, 29])
-plt.savefig("./figures/example-1.png", dpi=144, bbox_inches="tight")
+# plt.ylim([6, 29])
+# plt.savefig("./figures/example-1.png", dpi=144, bbox_inches="tight")
 
 
 xp = [model.forward(xn)[0] for _ in range(100)]
@@ -61,7 +61,7 @@ plt.fill_between(t,
 plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
-plt.ylim([6, 29])
-plt.savefig("./figures/example-2.png", dpi=144, bbox_inches="tight")
+# plt.ylim([6, 29])
+# plt.savefig("./figures/example-2.png", dpi=144, bbox_inches="tight")
 
 # %timeit model.forward(xn)
