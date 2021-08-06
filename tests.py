@@ -19,7 +19,7 @@ model.load_weights()
 # Generate a synthetic decay
 x = model.decode(torch.randn(zdim))
 # Add synthetic noise to it
-xn = x + 5*(torch.rand(20) - 0.5)
+xn = x + 4*(torch.rand(20) - 0.5)
 
 # Denoise decay with a forward pass
 xp = model.forward(xn)
@@ -33,6 +33,7 @@ plt.plot(t, xp[0].detach().numpy(), '-C3', label="Denoised")
 plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
+plt.ylim([0, 28])
 plt.savefig("./figures/example-1.png", dpi=144, bbox_inches="tight")
 
 
@@ -60,6 +61,7 @@ plt.fill_between(t,
 plt.legend()
 plt.ylabel("Chargeability (mV/V)")
 plt.xlabel("$t$ (s)")
+plt.ylim([0, 28])
 plt.savefig("./figures/example-2.png", dpi=144, bbox_inches="tight")
 
 # %timeit model.forward(xn)
