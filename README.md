@@ -102,7 +102,7 @@ The IP-VAE is quite fast. These are timing results from running a forward pass o
 Meaning it can process around 7500 decays per second on a personal laptop computer.
 
 ### Tune latent dimensions
-It is possible to use the default model (`zdim=2`) or the other models described in the paper (`zdim=1`, `zdim=4`, `zdim=6`). The difference in results is not that noticeable, but `zdim=1` tends to generate smoother curves than `zdim=6`.
+It is possible to use the default model (`zdim=2`) or the other models described in the paper (`zdim=1`, `zdim=4`, `zdim=6`). The differences are not that noticeable, but `zdim=1` can generate smoother curves than `zdim=6`.
 
 ```python
 model = ipvae.Net(zdim=1)
