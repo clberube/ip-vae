@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/389770922.svg)](https://zenodo.org/badge/latestdoi/389770922)
+[![DOI](https://zenodo.org/badge/389770922.svg)](https://zenodo.org/badge/latestdoi/389770922)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 # IP-VAE
