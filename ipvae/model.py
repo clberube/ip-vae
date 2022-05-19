@@ -5,7 +5,7 @@
 # @Last modified time: 2021-07-26 17:07:14
 
 
-import pkg_resources
+import os
 
 import torch
 import torch.nn as nn
@@ -83,8 +83,8 @@ class Net(nn.Module):
         return self.decode(z), mu, logvar
 
     def load_weights(self):
-        rel_path = f'/weights_zdim={self.zdim}.pt'
-        wt_path = pkg_resources.resource_filename('ipvae', rel_path)
+        pkg_path = os.path.dirname(__file__)
+        wt_path = os.path.join(pkg_path, f'weights_zdim={self.zdim}.pt')
         model = nn.DataParallel(self)
         model.load_state_dict(torch.load(wt_path))
         return model.module
