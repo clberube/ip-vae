@@ -4,7 +4,10 @@
 # IP-VAE
 PyTorch implementation of the time-domain induced polarization variational autoencoder.
 
-Original manuscript: https://arxiv.org/abs/2107.14796
+## Citation
+Charles L. Bérubé and Pierre Bérubé, (2022), "Data-driven modeling of time-domain induced polarization," GEOPHYSICS 87(3): E135-E146. https://doi.org/10.1190/geo2021-0497.1
+
+Original submitted manuscript (open access): https://arxiv.org/abs/2107.14796
 
 ## Setup
 ### Dependencies
