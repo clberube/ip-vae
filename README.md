@@ -13,10 +13,12 @@ Original submitted manuscript (open access): https://arxiv.org/abs/2107.14796
 ### Dependencies
 - [PyTorch](https://pytorch.org/)
 - [NumPy](https://numpy.org/)
-- [matplotlib](https://matplotlib.org/) (optional)
+- [Matplotlib](https://matplotlib.org/) (optional)
 
 ### Installation
 ```console
+git clone https://github.com/clberube/ip-vae
+cd ip-vae
 python setup.py install
 ```
 
